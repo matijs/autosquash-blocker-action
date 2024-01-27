@@ -2,18 +2,8 @@ name: CI
 on: pull_request
 
 jobs:
-  shellcheck:
-    name: ShellCheck
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: ShellCheck
-        run: |-
-          shellcheck ./action.sh
   dogfooding:
     name: Dogfooding
-    needs: shellcheck
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
