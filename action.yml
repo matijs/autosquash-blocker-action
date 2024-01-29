@@ -15,7 +15,9 @@ runs:
     - name: Check if this is a pull request
       if: ${{ github.event_name != 'pull_request' }}
       run: |
-        echo 'This action can only be run on pull requests.'
+        echo '### Error' >> ${GITHUB_STEP_SUMMARY}
+        echo '' >> ${GITHUB_STEP_SUMMARY}
+        echo 'This action can only be run on pull requests.' >> ${GITHUB_STEP_SUMMARY}
         exit 1
       shell: bash
 
