@@ -13,3 +13,5 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Eating our own dogfood
         uses: ./
+        with:
+          skip-checkout: true
